@@ -31,19 +31,19 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
 
-    emailjs
-      .send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        {
-          from_name: form.name,
-          to_name: "MOHAMMED MUSTAQEEM",
-          from_email: form.email,
-          to_email: "mustaqeemcode@gmail.com",
-          message: form.message,
-        },
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      )
+        emailjs
+          .send(
+            import.meta.env.VITE_EMAILJS_SERVICE_ID,
+            import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+            {
+              from_name: form.name,
+              to_name: "MD SAFIULLAH",
+              from_email: form.email,
+              to_email: "saifdev222@gmail.com",
+              message: form.message,
+            },
+            import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+          )
       .then(
         () => {
           setLoading(false);
@@ -71,10 +71,15 @@ const Contact = () => {
     >
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
-        className='flex-[0.75] bg-black-100 p-8 rounded-2xl'
+        className='flex-[0.75] glass-card p-8 rounded-2xl'
       >
         <p className={styles.sectionSubText}>Get in touch</p>
         <h3 className={styles.sectionHeadText}>Contact.</h3>
+
+        <p className='mt-4 text-secondary text-[17px] max-w-xl leading-[30px]'>
+          I'm currently available for freelance projects and full-time opportunities. 
+          Based in Lahore, Pakistan but working worldwide. Let's build something amazing together.
+        </p>
 
         <form
           ref={formRef}
@@ -89,7 +94,7 @@ const Contact = () => {
               value={form.name}
               onChange={handleChange}
               placeholder="What's your good name?"
-              className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
+              className='glass-input py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none font-medium'
             />
           </label>
           <label className='flex flex-col'>
@@ -100,7 +105,7 @@ const Contact = () => {
               value={form.email}
               onChange={handleChange}
               placeholder="What's your web address?"
-              className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
+              className='glass-input py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none font-medium'
             />
           </label>
           <label className='flex flex-col'>
@@ -111,13 +116,13 @@ const Contact = () => {
               value={form.message}
               onChange={handleChange}
               placeholder='What you want to say?'
-              className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
+              className='glass-input py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none font-medium resize-none'
             />
           </label>
 
           <button
             type='submit'
-            className='bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary'
+            className='glass-input py-3 px-8 rounded-xl outline-none w-fit text-white font-bold hover:bg-accent/20 hover:border-accent/50 transition-all duration-300'
           >
             {loading ? "Sending..." : "Send"}
           </button>

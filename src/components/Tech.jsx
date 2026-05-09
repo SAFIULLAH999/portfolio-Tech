@@ -5,21 +5,23 @@ import { technologies } from "../constants";
 
 const Tech = () => {
   return (
-    <div className="flex flex-row flex-wrap justify-center gap-10">
+    <div className="flex flex-row flex-wrap justify-center gap-8">
       {technologies.map((technology, index) => (
         <motion.div
           key={technology.name}
-          className="w-28 h-28"
+          className="w-24 h-24"
           initial={{ opacity: 0, scale: 0.5 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: index * 0.1 }}
           viewport={{ once: true }}
         >
-          <img
-            src={technology.icon}
-            alt={technology.name}
-            className="w-full h-full object-contain"
-          />
+          <div className="glass-card w-full h-full flex items-center justify-center rounded-2xl p-4">
+            <img
+              src={technology.icon}
+              alt={technology.name}
+              className="w-full h-full object-contain"
+            />
+          </div>
         </motion.div>
       ))}
     </div>

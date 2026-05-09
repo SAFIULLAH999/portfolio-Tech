@@ -25,7 +25,6 @@ import {
   project3,
 } from "../assets";
 import tekisky from '../assets/company/tekisky.png';
-// import project2 from '../assets/project2.png'
 
 export const navLinks = [
   {
@@ -44,19 +43,19 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Full-Stack Developer",
+    title: "Full-Stack Development",
     icon: web,
   },
   {
-    title: "Frontend Developer",
+    title: "Frontend Development",
     icon: mobile,
   },
   {
-    title: "Backend Developer",
+    title: "Backend Development",
     icon: backend,
   },
   {
-    title: "Ui UX Designer",
+    title: "UI/UX Design",
     icon: creator,
   },
 ];
@@ -74,7 +73,10 @@ const technologies = [
     name: "JavaScript",
     icon: javascript,
   },
-
+  {
+    name: "TypeScript",
+    icon: typescript,
+  },
   {
     name: "React JS",
     icon: reactjs,
@@ -92,7 +94,7 @@ const technologies = [
     icon: nodejs,
   },
   {
-    name: "express",
+    name: "Express",
     icon: express,
   },
   {
@@ -100,7 +102,7 @@ const technologies = [
     icon: mongodb,
   },
   {
-    name: "mysql",
+    name: "PostgreSQL",
     icon: mysql,
   },
   {
@@ -108,39 +110,82 @@ const technologies = [
     icon: Three3js,
   },
   {
-    name: "git",
+    name: "Git",
     icon: git,
   },
   {
-    name: "github",
+    name: "GitHub",
     icon: github,
   },
   {
-    name: "figma",
+    name: "Figma",
     icon: figma,
   },
   {
-    name: "mui",
-    icon: mui,
-  },
-  {
-    name: "aws",
+    name: "AWS",
     icon: aws,
   },
 ];
 
 const experiences = [
   {
-    title: "Full-Stack Developer",
-    company_name: "Tekisky",
+    title: "Full Stack Developer",
+    company_name: "Kloud Printz",
     icon: tekisky,
-    iconBg: "#383E56",
-    date: "Jan 2025",
+    iconBg: "rgba(0, 217, 255, 0.1)",
+    date: "Mar 2026 – Present",
     points: [
-      "Developing and maintaining web applications using MERN technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Engineered high-performance full-stack web applications using modern frameworks and technologies.",
+      "Developed secure backend services with authentication, database queries, and API integrations.",
+      "Designed responsive UI with HTML5, CSS3, Tailwind CSS, and modern JavaScript (ES6+).",
+      "Improved application performance through component optimization and clean architecture.",
+      "Implemented real-time database features and ensured cross-browser compatibility.",
+      "Followed best practices in code structure, scalability, and maintainability.",
+    ],
+  },
+  {
+    title: "Team Lead / Technical Manager",
+    company_name: "Passion Group",
+    icon: tekisky,
+    iconBg: "rgba(0, 217, 255, 0.1)",
+    date: "Sep 2024 – Present",
+    points: [
+      "Leading a globally distributed team of developers on full-stack web applications.",
+      "Architected scalable MERN-based solutions using React, Node.js, and MongoDB.",
+      "Implemented CI/CD pipelines with GitHub Actions and Vercel for streamlined deployments.",
+      "Conducted code reviews, sprint planning, backlog grooming, and daily standups (Agile).",
+      "Oversaw UI/UX design through Figma, ensuring mobile-first, responsive designs.",
+      "Mentored junior developers and ensured best practices in testing, performance, and accessibility.",
+    ],
+  },
+  {
+    title: "Front-End Developer",
+    company_name: "Modalys",
+    icon: tekisky,
+    iconBg: "rgba(0, 217, 255, 0.1)",
+    date: "Jan 2024 – Sep 2024",
+    points: [
+      "Designed and implemented responsive front-end interfaces using React.js and Next.js.",
+      "Built pixel-perfect UIs from Figma prototypes, following accessibility and responsiveness standards.",
+      "Optimized performance using lazy loading, dynamic imports, and Lighthouse audits.",
+      "Integrated third-party APIs and managed application state with Redux.",
+      "Assisted QA team in manual and automated testing using Cypress and Jest.",
+      "Improved site SEO and web vitals by optimizing assets and adhering to best practices.",
+    ],
+  },
+  {
+    title: "Team Lead / Finance Manager",
+    company_name: "ALL4U Solutions and Tech",
+    icon: tekisky,
+    iconBg: "rgba(0, 217, 255, 0.1)",
+    date: "Dec 2026 – Present",
+    points: [
+      "Led and managed a globally distributed development team, overseeing full-stack web application projects.",
+      "Designed and supervised scalable MERN-stack architectures focused on performance and maintainability.",
+      "Managed project workflows, sprint planning, task delegation, and Agile team coordination.",
+      "Collaborated with stakeholders to align technical solutions with business objectives.",
+      "Oversaw deployment pipelines and release management using GitHub Actions and Vercel.",
+      "Directed UI/UX strategy using Figma, ensuring responsive, mobile-first experiences.",
     ],
   },
 ];
@@ -148,52 +193,47 @@ const experiences = [
 const testimonials = [
   {
     testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-    name: "Rahul Iyer",
-    designation: "Export AutoParts",
-    company: "GearXpert",
-    image:
-      "https://www.stglawfirm.com/wp-content/uploads/2022/11/Rahul-Iyer-Attorney-Profile.png.webp",
-  },
-  {
-    testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: "Abdul Raheman",
-    designation: "Ecommerce Business",
-    company: "justbuyz",
-    image: "https://randomuser.me/api/portraits/men/5.jpg",
-  },
-  {
-    testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Kavita Nair",
+      "Exceptional problem-solver who delivers high-quality, production-ready applications with attention to detail.",
+    name: "Alex Thompson",
     designation: "CTO",
-    company: "456 Enterprises",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
+    company: "TechStart Inc",
+    image: "https://randomuser.me/api/portraits/men/1.jpg",
+  },
+  {
+    testimonial:
+      "Outstanding developer who consistently exceeds expectations and leads teams effectively.",
+    name: "Sarah Chen",
+    designation: "Product Manager",
+    company: "Innovate Labs",
+    image: "https://randomuser.me/api/portraits/women/2.jpg",
+  },
+  {
+    testimonial:
+      "A true professional who combines technical expertise with excellent communication skills.",
+    name: "Michael Roberts",
+    designation: "Engineering Manager",
+    company: "Scale Corp",
+    image: "https://randomuser.me/api/portraits/men/3.jpg",
   },
 ];
 
 const projects = [
   {
-    name: "GareXpert",
+    name: "Kloud Printz",
     description:
-      "Web-based platform that enables users to browse, purchase, and manage auto parts from various suppliers, ensuring a seamless and reliable shopping experience.",
+      "Enterprise cloud printing solution with real-time job tracking, secure authentication, and multi-platform support. Built for scalability and high performance.",
     tags: [
       {
         name: "react",
-        color: "blue-text-gradient",
       },
       {
-        name: "GSAP",
-        color: "green-text-gradient",
+        name: "nodejs",
+      },
+      {
+        name: "mongodb",
       },
       {
         name: "tailwind",
-        color: "orange-text-gradient",
-      },
-      {
-        name: "EmailJS",
-        color: "-text-gradient",
       },
     ],
     image: project2,
@@ -202,27 +242,19 @@ const projects = [
   {
     name: "TekiskyMart",
     description:
-      "An eCommerce platform offering a seamless shopping experience with a wide range of products, secure payments, and fast delivery.",
+      "Full-featured eCommerce platform with secure payment processing, inventory management, and seamless user experience.",
     tags: [
       {
-        name: "react",
-        color: "blue-text-gradient",
+        name: "nextjs",
       },
       {
-        name: "Node.js",
-        color: "green-text-gradient",
+        name: "nodejs",
       },
       {
-        name: "Express",
-        color: "pink-text-gradient",
+        name: "mongodb",
       },
       {
-        name: "MongoDB",
-        color: "green-text-gradient",
-      },
-      {
-        name: "taildwind",
-        color: "orange-text-gradient",
+        name: "tailwind",
       },
     ],
     image: project1,
@@ -231,19 +263,19 @@ const projects = [
   {
     name: "Softcadia",
     description:
-      "A job portal connecting job seekers with employers, offering seamless job search, application tracking, and recruitment solutions.",
+      "Modern job portal connecting seekers with employers. Features include job matching, application tracking, and real-time notifications.",
     tags: [
       {
         name: "react",
-        color: "blue-text-gradient",
       },
       {
-        name: "Node.js",
-        color: "green-text-gradient",
+        name: "nodejs",
       },
       {
-        name: "Express",
-        color: "pink-text-gradient",
+        name: "express",
+      },
+      {
+        name: "mongodb",
       },
     ],
     image: project3,

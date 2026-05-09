@@ -22,6 +22,7 @@ const ProjectCard = ({
     <motion.div
       variants={fadeIn("up", "spring", index * 0.5, 0.75)}
       onClick={() => window.open(source_code_link, "_blank")}
+      className='cursor-pointer'
     >
       <Tilt
         options={{
@@ -29,31 +30,34 @@ const ProjectCard = ({
           scale: 1,
           speed: 450,
         }}
-        className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full "
+        className="glass-card p-5 rounded-2xl sm:w-[360px] w-full"
       >
         <div className="relative w-full h-[230px]">
           <img
             src={image}
             alt="project_image"
-            className="w-full h-full object-fit rounded-2xl"
+            className="w-full h-full object-cover rounded-2xl"
           />
 
-          <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
+          <div className="absolute inset-0 flex justify-end m-3 opacity-0 hover:opacity-100 transition-opacity duration-300">
             <div
-              onClick={() => window.open(source_code_link, "_blank")}
-              className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+              onClick={(e) => {
+                e.stopPropagation();
+                window.open(source_code_link, "_blank");
+              }}
+              className="glass w-10 h-10 rounded-full flex justify-center items-center cursor-pointer hover:bg-accent/20 transition-all duration-300"
             >
               <img
                 src={github}
                 alt="live"
-                className=" object-cover  mix-blend-color-dodge"
+                className="w-5 h-5 object-cover"
               />
             </div>
           </div>
         </div>
 
         <div className="mt-5">
-          <h3 className="text-white font-bold text-[24px]">{name}</h3>
+          <h3 className="text-accent font-bold text-[24px]">{name}</h3>
           <p className="mt-2 text-secondary text-[14px]">{description}</p>
         </div>
 
@@ -61,7 +65,7 @@ const ProjectCard = ({
           {tags.map((tag) => (
             <p
               key={`${name}-${tag.name}`}
-              className={`text-[14px] ${tag.color}`}
+              className="text-[14px] text-accent"
             >
               #{tag.name}
             </p>
