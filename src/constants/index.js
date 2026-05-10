@@ -20,9 +20,6 @@ import {
   github,
   Three3js,
   aws,
-  project2,
-  project1,
-  project3,
 } from "../assets";
 import tekisky from '../assets/company/tekisky.png';
 
@@ -219,9 +216,51 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Kloud Printz",
+    name: "NAV-IN",
     description:
-      "Enterprise cloud printing solution with real-time job tracking, secure authentication, and multi-platform support. Built for scalability and high performance.",
+      "Interactive navigation component library with smooth animations, accessibility features, and customizable themes for modern web applications.",
+    tags: [
+      {
+        name: "react",
+      },
+      {
+        name: "typescript",
+      },
+      {
+        name: "tailwind",
+      },
+      {
+        name: "framer-motion",
+      },
+    ],
+    image: "https://nav-in.vercel.app/og-image.png",
+    source_code_link: "https://github.com/",
+  },
+  {
+    name: "NAVDEXS",
+    description:
+      "Advanced decentralized exchange platform with real-time trading, liquidity pools, and wallet integration for seamless crypto transactions.",
+    tags: [
+      {
+        name: "nextjs",
+      },
+      {
+        name: "web3",
+      },
+      {
+        name: "ethers",
+      },
+      {
+        name: "tailwind",
+      },
+    ],
+    image: "https://navdexs.vercel.app/og-image.png",
+    source_code_link: "https://github.com/",
+  },
+  {
+    name: "Passion X Group",
+    description:
+      "Corporate website for a business conglomerate featuring dynamic content, multi-language support, and comprehensive service showcases.",
     tags: [
       {
         name: "react",
@@ -236,34 +275,34 @@ const projects = [
         name: "tailwind",
       },
     ],
-    image: project2,
+    image: "https://www.passionxgroup.com/og-image.png",
     source_code_link: "https://github.com/",
   },
   {
-    name: "TekiskyMart",
+    name: "NAV Store LAC",
     description:
-      "Full-featured eCommerce platform with secure payment processing, inventory management, and seamless user experience.",
+      "Full-featured e-commerce platform with product catalog, shopping cart, secure checkout, and admin dashboard for inventory management.",
     tags: [
       {
         name: "nextjs",
       },
       {
-        name: "nodejs",
+        name: "stripe",
       },
       {
-        name: "mongodb",
+        name: "postgresql",
       },
       {
         name: "tailwind",
       },
     ],
-    image: project1,
-    source_code_link: "https://tekiskymart.com/",
+    image: "https://nav-store-lac.vercel.app/og-image.png",
+    source_code_link: "https://github.com/",
   },
   {
-    name: "Softcadia",
+    name: "Build All For You",
     description:
-      "Modern job portal connecting seekers with employers. Features include job matching, application tracking, and real-time notifications.",
+      "Construction and renovation service platform with project portfolio, quote calculator, and client collaboration tools.",
     tags: [
       {
         name: "react",
@@ -278,8 +317,8 @@ const projects = [
         name: "mongodb",
       },
     ],
-    image: project3,
-    source_code_link: "https://softcadia.tekisky.com/",
+    image: "https://buildallforyou.com/og-image.png",
+    source_code_link: "https://github.com/",
   },
 ];
 
