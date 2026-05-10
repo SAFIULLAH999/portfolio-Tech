@@ -233,8 +233,8 @@ const projects = [
         name: "framer-motion",
       },
     ],
-    image: "https://nav-in.vercel.app/og-image.png",
-    source_code_link: "https://github.com/",
+    image: "https://via.placeholder.com/400x300/0a0a0a/00d9ff?text=NAV-IN",
+    source_code_link: "https://nav-in.vercel.app/",
   },
   {
     name: "NAVDEXS",
@@ -254,8 +254,8 @@ const projects = [
         name: "tailwind",
       },
     ],
-    image: "https://navdexs.vercel.app/og-image.png",
-    source_code_link: "https://github.com/",
+    image: "https://via.placeholder.com/400x300/0a0a0a/9333ea?text=NAVDEXS",
+    source_code_link: "https://navdexs.vercel.app/",
   },
   {
     name: "Passion X Group",
@@ -275,8 +275,8 @@ const projects = [
         name: "tailwind",
       },
     ],
-    image: "https://www.passionxgroup.com/og-image.png",
-    source_code_link: "https://github.com/",
+    image: "https://via.placeholder.com/400x300/0a0a0a/ff6600?text=Passion+X+Group",
+    source_code_link: "https://www.passionxgroup.com/",
   },
   {
     name: "NAV Store LAC",
@@ -296,8 +296,8 @@ const projects = [
         name: "tailwind",
       },
     ],
-    image: "https://nav-store-lac.vercel.app/og-image.png",
-    source_code_link: "https://github.com/",
+    image: "https://via.placeholder.com/400x300/0a0a0a/00d9ff?text=NAV+Store+LAC",
+    source_code_link: "https://nav-store-lac.vercel.app/",
   },
   {
     name: "Build All For You",
@@ -317,8 +317,8 @@ const projects = [
         name: "mongodb",
       },
     ],
-    image: "https://buildallforyou.com/og-image.png",
-    source_code_link: "https://github.com/",
+    image: "https://via.placeholder.com/400x300/0a0a0a/ffcc00?text=Build+All+For+You",
+    source_code_link: "https://buildallforyou.com/",
   },
 ];
 
