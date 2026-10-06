@@ -1,5 +1,12 @@
 ﻿import { useState } from "react";
 import {
+  Reveal,
+  Entrance,
+  HeroSculpture,
+  TiltSurface,
+} from "./components/PortfolioMotion";
+import PortfolioNavigation from "./components/PortfolioNavigation";
+import {
   projects,
   experience,
   leadership,
@@ -15,7 +22,11 @@ const Resume = ({ className = "" }) => (
 );
 function ProjectVisual({ project, index }) {
   return (
-    <div className={`project-visual visual-${project.kind}`} aria-hidden="true">
+    <TiltSurface
+      className={`project-visual visual-${project.kind}`}
+      aria-hidden="true"
+      strength={6}
+    >
       <span className="visual-index">0{index + 1} / PROJECT STUDY</span>
       <div className="project-art">
         <strong>{project.mark}</strong>
@@ -25,14 +36,17 @@ function ProjectVisual({ project, index }) {
         <i />
       </div>
       <span className="visual-caption">Conceptual project illustration</span>
-    </div>
+      <span className="visual-open" aria-hidden="true">
+        ↗
+      </span>
+    </TiltSurface>
   );
 }
 function Timeline({ entries }) {
   return (
     <div className="timeline">
       {entries.map((item) => (
-        <article className="experience-row" key={item.company}>
+        <Reveal as="article" className="experience-row" key={item.company}>
           <div className="experience-date mono">
             {item.date}
             <span>{item.location}</span>
@@ -46,13 +60,12 @@ function Timeline({ entries }) {
               ))}
             </ul>
           </div>
-        </article>
+        </Reveal>
       ))}
     </div>
   );
 }
 export default function App() {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [copied, setCopied] = useState("");
   async function copyEmail() {
     try {
@@ -67,42 +80,7 @@ export default function App() {
       <a className="skip-link" href="#main">
         Skip to content
       </a>
-      <header className="header">
-        <div className="container header-inner">
-          <a
-            className="brand"
-            href="#home"
-            aria-label="Muhammad Saifullah home"
-          >
-            saif<span className="blue">.</span>
-            <span className="brand-sub">DEVELOPER & TEAM LEAD</span>
-          </a>
-          <button
-            className="menu-button"
-            aria-expanded={menuOpen}
-            aria-controls="main-nav"
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
-            {menuOpen ? "Close −" : "Menu +"}
-          </button>
-          <nav
-            id="main-nav"
-            className={menuOpen ? "nav open" : "nav"}
-            aria-label="Main navigation"
-          >
-            {["Work", "About", "Experience", "Contact"].map((label) => (
-              <a
-                href={`#${label.toLowerCase()}`}
-                key={label}
-                onClick={() => setMenuOpen(false)}
-              >
-                {label}
-              </a>
-            ))}
-            <Resume className="nav-resume" />
-          </nav>
-        </div>
-      </header>
+      <PortfolioNavigation />
       <main id="main">
         <section id="home" className="hero container">
           <div className="hero-top mono">
@@ -117,43 +95,32 @@ export default function App() {
                 Full Stack Developer · MERN / Next.js Engineer
               </p>
               <h1>
-                Thoughtful
-                <br />
-                interfaces.
-                <br />
-                <span className="blue">Solid</span> systems
-                <span className="blue">.</span>
+                <Entrance as="span" delay={0.05}>Thoughtful</Entrance>
+                <Entrance as="span" delay={0.14}>interfaces.</Entrance>
+                <Entrance as="span" delay={0.23}>
+                  <span className="blue">Solid</span> systems
+                  <span className="blue">.</span>
+                </Entrance>
               </h1>
-              <p className="hero-description">
-                I build web products from the first interface to the last API.
-                Clean design, reliable engineering, and the teamwork to bring it
-                all together.
-              </p>
-              <div className="hero-actions">
-                <a className="button primary" href="#work">
-                  Explore my work <span aria-hidden="true">↓</span>
-                </a>
-                <a className="text-link" href="#contact">
-                  Let's talk <Arrow />
-                </a>
-              </div>
+              <Entrance delay={0.32}>
+                <p className="hero-description">
+                  I build web products from the first interface to the last API.
+                  Clean design, reliable engineering, and the teamwork to bring
+                  it all together.
+                </p>
+              </Entrance>
+              <Entrance delay={0.4}>
+                <div className="hero-actions">
+                  <a className="button primary" href="#work">
+                    Explore my work <span aria-hidden="true">↓</span>
+                  </a>
+                  <a className="text-link" href="#contact">
+                    Let's talk <Arrow />
+                  </a>
+                </div>
+              </Entrance>
             </div>
-            <div className="hero-object">
-              <div className="object-corner mono">DESIGN ↔ DEVELOPMENT</div>
-              <div className="morph" aria-hidden="true">
-                <div />
-                <div />
-                <div />
-              </div>
-              <div className="object-bottom">
-                <span className="code-label">&lt;/&gt;</span>
-                <span className="mono">
-                  BUILT WITH INTENT.
-                  <br />
-                  FROM UI TO API.
-                </span>
-              </div>
-            </div>
+            <HeroSculpture />
           </div>
           <div className="hero-bottom">
             <span className="mono">
@@ -185,7 +152,7 @@ export default function App() {
           </div>
         </div>
         <section id="work" className="section container">
-          <div className="section-heading">
+          <Reveal className="section-heading">
             <div>
               <p className="eyebrow mono">01 / SELECTED WORK</p>
               <h2>
@@ -198,10 +165,15 @@ export default function App() {
               Commerce, talent platforms, and business websites.
               <br />A selection of products I've helped build.
             </p>
-          </div>
+          </Reveal>
           <div className="projects">
             {projects.map((project, index) => (
-              <article className="project" key={project.name}>
+              <Reveal
+                as="article"
+                className="project"
+                key={project.name}
+                delay={(index % 2) * 0.1}
+              >
                 <ProjectVisual project={project} index={index} />
                 <div className="project-details">
                   <div className="project-meta mono">
@@ -229,7 +201,7 @@ export default function App() {
                     <Arrow />
                   </a>
                 </div>
-              </article>
+              </Reveal>
             ))}
           </div>
         </section>
@@ -268,16 +240,20 @@ export default function App() {
             </div>
             <div className="skills">
               {skills.map((group) => (
-                <div className="skill-group" key={group.name}>
+                <Reveal className="skill-group" key={group.name}>
                   <h4>{group.name}</h4>
-                  <p>{group.items.join(" · ")}</p>
-                </div>
+                  <div className="skill-chips">
+                    {group.items.map((item) => (
+                      <span key={item}>{item}</span>
+                    ))}
+                  </div>
+                </Reveal>
               ))}
             </div>
           </div>
         </section>
         <section id="experience" className="section container">
-          <div className="section-heading">
+          <Reveal className="section-heading">
             <div>
               <p className="eyebrow mono">03 / EXPERIENCE</p>
               <h2>
@@ -291,7 +267,7 @@ export default function App() {
               <br />
               and responsibility beyond the code.
             </p>
-          </div>
+          </Reveal>
           <Timeline entries={experience} />
           <div className="subsection-heading">
             <h3>Leadership & entrepreneurship</h3>

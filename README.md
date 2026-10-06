@@ -18,3 +18,9 @@ Open the URL Vite reports. Production verification: `npm run build`. Preview the
 Project visuals are explicitly labeled conceptual illustrations, not screenshots. External project links use the domains supplied by the résumé; Nav is marked as in development. Contact uses email, telephone, and LinkedIn links with a clipboard action. No email delivery service is configured or required. Reduced-motion preferences and keyboard focus are supported.
 
 The prior 3D portfolio components and assets remain in the repository for reference, but are not imported by the current application. No deployment changes are included.
+
+## Motion and interaction
+
+The interface uses the installed Framer Motion dependency for staggered hero entrances and one-time viewport reveals. Content remains readable before reveal, and deep links skip the hero entrance. Navigation tracks the active section, compacts on scroll, and provides a decorative reading-progress line. The mobile menu opens with a short transition, closes on selection or Escape, and excludes closed links from keyboard navigation.
+
+Hero and project surfaces respond gently to fine-pointer movement, using requestAnimationFrame and local CSS properties rather than application renders. Touch devices skip tilt. All listeners and pending frames are cleaned up. The orbital hero, floating labels, arrow interactions, and scroll effects respect reduced-motion settings. No custom cursor, scroll interception, counters, or external animation services are used.
