@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { ScrollProgress } from "./PortfolioMotion";
+import { MotionToggle } from "./MotionPreferences";
 
 const sections = ["Work", "About", "Experience", "Contact"];
 
@@ -72,15 +73,18 @@ export default function PortfolioNavigation() {
             saif<span className="blue">.</span>
             <span className="brand-sub">DEVELOPER & TEAM LEAD</span>
           </a>
-          <button
-            ref={menuButton}
-            className="menu-button"
-            aria-expanded={open}
-            aria-controls="main-nav"
-            onClick={() => setOpen(!open)}
-          >
-            {open ? "Close −" : "Menu +"}
-          </button>
+          <div className="header-controls">
+            <MotionToggle />
+            <button
+              ref={menuButton}
+              className="menu-button"
+              aria-expanded={open}
+              aria-controls="main-nav"
+              onClick={() => setOpen(!open)}
+            >
+              {open ? "Close −" : "Menu +"}
+            </button>
+          </div>
           <nav
             id="main-nav"
             className={`nav${open ? " open" : ""}`}

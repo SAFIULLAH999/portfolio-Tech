@@ -3,8 +3,13 @@ import {
   Reveal,
   Entrance,
   HeroSculpture,
-  TiltSurface,
+  MagneticLink,
 } from "./components/PortfolioMotion";
+import ProjectPreview from "./components/ProjectPreview";
+import {
+  MotionPreferences,
+  MotionToggle,
+} from "./components/MotionPreferences";
 import PortfolioNavigation from "./components/PortfolioNavigation";
 import {
   projects,
@@ -20,28 +25,6 @@ const Resume = ({ className = "" }) => (
     Download résumé <span aria-hidden="true">↓</span>
   </a>
 );
-function ProjectVisual({ project, index }) {
-  return (
-    <TiltSurface
-      className={`project-visual visual-${project.kind}`}
-      aria-hidden="true"
-      strength={6}
-    >
-      <span className="visual-index">0{index + 1} / PROJECT STUDY</span>
-      <div className="project-art">
-        <strong>{project.mark}</strong>
-        <span>{project.caption}</span>
-        <i />
-        <i />
-        <i />
-      </div>
-      <span className="visual-caption">Conceptual project illustration</span>
-      <span className="visual-open" aria-hidden="true">
-        ↗
-      </span>
-    </TiltSurface>
-  );
-}
 function Timeline({ entries }) {
   return (
     <div className="timeline">
@@ -65,7 +48,7 @@ function Timeline({ entries }) {
     </div>
   );
 }
-export default function App() {
+function Portfolio() {
   const [copied, setCopied] = useState("");
   async function copyEmail() {
     try {
@@ -95,8 +78,12 @@ export default function App() {
                 Full Stack Developer · MERN / Next.js Engineer
               </p>
               <h1>
-                <Entrance as="span" delay={0.05}>Thoughtful</Entrance>
-                <Entrance as="span" delay={0.14}>interfaces.</Entrance>
+                <Entrance as="span" delay={0.05}>
+                  Thoughtful
+                </Entrance>
+                <Entrance as="span" delay={0.14}>
+                  interfaces.
+                </Entrance>
                 <Entrance as="span" delay={0.23}>
                   <span className="blue">Solid</span> systems
                   <span className="blue">.</span>
@@ -111,14 +98,19 @@ export default function App() {
               </Entrance>
               <Entrance delay={0.4}>
                 <div className="hero-actions">
-                  <a className="button primary" href="#work">
+                  <MagneticLink className="button primary" href="#work">
                     Explore my work <span aria-hidden="true">↓</span>
-                  </a>
+                  </MagneticLink>
                   <a className="text-link" href="#contact">
                     Let's talk <Arrow />
                   </a>
                 </div>
               </Entrance>
+              <div className="hero-capabilities mono">
+                <span>INTERFACE</span>
+                <i /> <span>BACKEND</span>
+                <i /> <span>DELIVERY</span>
+              </div>
             </div>
             <HeroSculpture />
           </div>
@@ -174,7 +166,7 @@ export default function App() {
                 key={project.name}
                 delay={(index % 2) * 0.1}
               >
-                <ProjectVisual project={project} index={index} />
+                <ProjectPreview project={project} index={index} />
                 <div className="project-details">
                   <div className="project-meta mono">
                     <span>{project.category}</span>
@@ -306,13 +298,13 @@ export default function App() {
                 <br />
                 with a <span className="blue">hello.</span>
               </h2>
-              <a
+              <MagneticLink
                 href="mailto:saifdev222@gmail.com"
                 className="contact-arrow"
                 aria-label="Email Muhammad Saifullah"
               >
                 <Arrow />
-              </a>
+              </MagneticLink>
             </div>
             <div className="contact-bottom">
               <div>
@@ -353,7 +345,16 @@ export default function App() {
         <a className="mono" href="#home">
           BACK TO TOP ↑
         </a>
+        <MotionToggle />
       </footer>
     </>
+  );
+}
+
+export default function App() {
+  return (
+    <MotionPreferences>
+      <Portfolio />
+    </MotionPreferences>
   );
 }
