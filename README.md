@@ -28,3 +28,9 @@ The hero uses a dimensional stack of interface, data, and system layers on a blu
 Hero and project surfaces respond gently to fine-pointer movement with local spotlights and depth, using requestAnimationFrame and CSS properties rather than application renders. Magnetic link effects move their inner visual content while keeping the hit target stable. Touch devices skip pointer effects. All listeners and pending frames are cleaned up.
 
 Motion controls in the header and footer pause decorative CSS animation and disable JavaScript pointer/transition effects. The preference persists locally when storage is available. The operating system's reduced-motion setting takes precedence and disables those controls with an accessible explanation. Text remains at full opacity before and during every reveal. No custom cursor, scroll interception, counters, or external animation services are used.
+
+## Exploring projects
+
+The curated gallery filters the six résumé projects by business websites, talent platforms, commerce, or personal work. Counts and result announcements reflect the displayed projects. Layout motion follows the global motion preference.
+
+Each card offers both a direct website link and an Explore project button. The native project dialog shows the existing description, tags, status, and conceptual preview. It traps focus, closes with Escape or its close button, restores focus to the opener, and locks background scrolling while open. A motion control is also available inside the dialog. `src/gallery.css` styles the gallery and detail view; `ProjectGallery.jsx` and `ProjectDialog.jsx` manage their interactions.

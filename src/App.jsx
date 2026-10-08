@@ -5,14 +5,13 @@ import {
   HeroSculpture,
   MagneticLink,
 } from "./components/PortfolioMotion";
-import ProjectPreview from "./components/ProjectPreview";
+import ProjectGallery from "./components/ProjectGallery";
 import {
   MotionPreferences,
   MotionToggle,
 } from "./components/MotionPreferences";
 import PortfolioNavigation from "./components/PortfolioNavigation";
 import {
-  projects,
   experience,
   leadership,
   skills,
@@ -68,14 +67,17 @@ function Portfolio() {
         <section id="home" className="hero container">
           <div className="hero-top mono">
             <span>
-              <i className="status-dot" /> MUHAMMAD SAIFULLAH
+              <i className="status-dot" /> FULL STACK / MERN / NEXT.JS
             </span>
             <span>LAHORE, PAKISTAN / GLOBAL TEAMS</span>
           </div>
           <div className="hero-grid">
             <div className="hero-copy">
               <p className="eyebrow">
-                Full Stack Developer · MERN / Next.js Engineer
+                <span className="hero-name">Muhammad Saifullah</span>
+                <span className="hero-role">
+                  Full Stack Developer · MERN / Next.js Engineer
+                </span>
               </p>
               <h1>
                 <Entrance as="span" delay={0.05}>
@@ -85,7 +87,7 @@ function Portfolio() {
                   interfaces.
                 </Entrance>
                 <Entrance as="span" delay={0.23}>
-                  <span className="blue">Solid</span> systems
+                  <em className="blue hero-italic">Solid</em> systems
                   <span className="blue">.</span>
                 </Entrance>
               </h1>
@@ -158,44 +160,7 @@ function Portfolio() {
               <br />A selection of products I've helped build.
             </p>
           </Reveal>
-          <div className="projects">
-            {projects.map((project, index) => (
-              <Reveal
-                as="article"
-                className="project"
-                key={project.name}
-                delay={(index % 2) * 0.1}
-              >
-                <ProjectPreview project={project} index={index} />
-                <div className="project-details">
-                  <div className="project-meta mono">
-                    <span>{project.category}</span>
-                    {project.soon && (
-                      <span className="project-status">LAUNCHING SOON</span>
-                    )}
-                  </div>
-                  <h3>{project.name}</h3>
-                  <p>{project.description}</p>
-                  <div className="tags">
-                    {project.tags.map((tag) => (
-                      <span key={tag}>{tag}</span>
-                    ))}
-                  </div>
-                  <a
-                    className="project-link"
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {project.soon
-                      ? "View project in development"
-                      : "Visit website"}{" "}
-                    <Arrow />
-                  </a>
-                </div>
-              </Reveal>
-            ))}
-          </div>
+          <ProjectGallery />
         </section>
         <section id="about" className="section about-section">
           <div className="container">
@@ -231,8 +196,11 @@ function Portfolio() {
               <span className="mono">DESIGN · BUILD · SHIP</span>
             </div>
             <div className="skills">
-              {skills.map((group) => (
+              {skills.map((group, index) => (
                 <Reveal className="skill-group" key={group.name}>
+                  <div className="skill-number mono">
+                    0{index + 1} / TOOLKIT
+                  </div>
                   <h4>{group.name}</h4>
                   <div className="skill-chips">
                     {group.items.map((item) => (
